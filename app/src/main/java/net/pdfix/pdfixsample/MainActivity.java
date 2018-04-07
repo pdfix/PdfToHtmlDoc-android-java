@@ -1,5 +1,7 @@
 package net.pdfix.pdfixsample;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -64,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
     }
     catch (Exception ex) {
       ex.printStackTrace();
+      AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+      dlgAlert.setTitle("Pdfix Androis Sample");
+      dlgAlert.setMessage(ex.getMessage());
+      dlgAlert.setPositiveButton("Ok",
+        new DialogInterface.OnClickListener() {
+          public void onClick(DialogInterface dialog, int which) {
+            //dismiss the dialog
+          }
+        });
+      dlgAlert.show();
     }
   }
 
