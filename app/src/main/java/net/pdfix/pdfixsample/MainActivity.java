@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     WebView webView = findViewById(R.id.pdfixwebview);
     setupWebView(webView);
 
-    String email = "your@email.com";
-    String licenseKey = "YOURLICENSEKEY";
+    String email = "YOUR@EMAIL";
+    String licenseKey = "LICENSE_KEY";
 
     try {
       initializePdfix(email, licenseKey);
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     if (pdfix == null)
       throw new RuntimeException("Pdfix initialization fail");
     if (!pdfix.Authorize(email, licenseKey))
-      throw new RuntimeException("PDFix Authorization fail");
+      throw new RuntimeException("PDFix Authorization fail.");
 
     if (pdfToHtml == null)
       pdfToHtml = new PdfToHtml();
